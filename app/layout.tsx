@@ -7,13 +7,13 @@ const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: 'DK — Cybersecurity Enthusiast | Aspiring Penetration Tester',
+  title: 'Dilip — Cybersecurity Enthusiast | Aspiring Penetration Tester',
   description:
-    'Portfolio of DK, a cybersecurity learner focused on penetration testing, red team fundamentals, networking, Linux, Windows, and web application security.',
+    'Portfolio of Dilip, a cybersecurity learner focused on penetration testing, red team fundamentals, networking, Linux, Windows, and web application security.',
   keywords: ['penetration testing', 'cybersecurity', 'red team', 'offensive security', 'portfolio'],
-  authors: [{ name: 'DK' }],
+  authors: [{ name: 'Dilip' }],
   openGraph: {
-    title: 'DK — Aspiring Penetration Tester',
+    title: 'Dilip — Aspiring Penetration Tester',
     description: 'Learning offensive security, networking, and penetration testing through hands-on labs.',
     type: 'website',
   },
