@@ -1,7 +1,7 @@
 // Central place to edit portfolio content. Replace placeholder values with your own.
 
 export const siteConfig = {
-  name: 'Dilip',
+  name: 'Dilip kumar',
   title: 'Cybersecurity Enthusiast | Aspiring Penetration Tester',
   intro:
     'I am learning offensive security from the ground up — building a strong foundation in networking, operating systems, and web technologies, and applying it through hands-on penetration testing labs.',
