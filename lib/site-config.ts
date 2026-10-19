@@ -143,41 +143,56 @@ export const projects: Project[] = [
 export type Milestone = {
   title: string
   description: string
-  category: 'Foundations' | 'Lab' | 'Study' | 'Tooling'
-  status: 'planned' | 'in-progress' | 'completed'
-  date?: string
+  category: string
+  status: 'planned' | 'learning' | 'in-progress' | 'completed'
+  icon: 'network' | 'linux' | 'windows' | 'web' | 'offensive' | 'tooling'
 }
 
-// Add entries as you progress. Only mark items "completed" once they genuinely are.
+// Edit statuses as you progress. Only mark items "completed" once they genuinely are.
 export const milestones: Milestone[] = [
   {
-    title: 'Networking fundamentals',
-    description: 'Working through the OSI model, TCP/IP, subnetting, and packet analysis with Wireshark.',
+    title: 'Network Fundamentals',
+    description: 'Studying networking concepts, TCP/IP, subnetting, ports, protocols, and network enumeration.',
     category: 'Foundations',
     status: 'in-progress',
+    icon: 'network',
   },
   {
-    title: 'Linux command line proficiency',
-    description: 'Practicing file system navigation, permissions, processes, and shell scripting.',
-    category: 'Foundations',
+    title: 'Linux Fundamentals',
+    description:
+      'Practicing Linux commands, file permissions, file system navigation, processes, and shell scripting.',
+    category: 'Operating Systems',
     status: 'in-progress',
+    icon: 'linux',
   },
   {
-    title: 'Home lab setup',
-    description: 'Building an isolated virtual lab with attacker and target machines for safe practice.',
-    category: 'Lab',
-    status: 'planned',
+    title: 'Windows Fundamentals',
+    description: 'Learning Windows administration, PowerShell, permissions, and Windows internals.',
+    category: 'Operating Systems',
+    status: 'in-progress',
+    icon: 'windows',
   },
   {
-    title: 'Web application security practice',
-    description: 'Exploring OWASP Top 10 vulnerabilities in deliberately vulnerable applications.',
-    category: 'Study',
-    status: 'planned',
+    title: 'Web Application Security',
+    description: 'Studying web vulnerabilities, HTTP requests, SQL injection, and web application testing.',
+    category: 'Web Security',
+    status: 'in-progress',
+    icon: 'web',
   },
   {
-    title: 'Python for security tooling',
-    description: 'Writing small scripts to understand how common security tools work under the hood.',
+    title: 'Penetration Testing Methodology',
+    description:
+      'Developing a structured approach to reconnaissance, enumeration, exploitation, and reporting through authorized practical labs.',
+    category: 'Offensive Security',
+    status: 'in-progress',
+    icon: 'offensive',
+  },
+  {
+    title: 'Security Tooling & Scripting',
+    description:
+      'Developing practical experience with security tools and learning Bash and Python for automation.',
     category: 'Tooling',
-    status: 'planned',
+    status: 'learning',
+    icon: 'tooling',
   },
 ]
