@@ -71,9 +71,13 @@ export type Certification = {
   provider: string
   status: 'training-completed' | 'in-progress' | 'certified'
   description?: string
+  // ISO date (YYYY-MM-DD) shown on the card.
+  dateAwarded?: string
+  // Path to a file in /public, e.g. '/certificates/ejpt-certificate.png'. Replace the file to update it.
+  certificateFile?: string
   // Only add once you have a real credential link.
   verificationUrl?: string
-}
+  }
 
 // Only set status to "certified" after passing the official exam.
 export const certifications: Certification[] = [
@@ -84,8 +88,10 @@ export const certifications: Certification[] = [
     status: 'certified',
     description:
       'Earned the eJPT certification by demonstrating foundational knowledge of penetration testing and practical security assessment techniques.',
-    // Paste your official INE credential verification URL here, e.g. 'https://certs.ine.com/...'
-    verificationUrl: '',
+  dateAwarded: '2026-04-26',
+  certificateFile: '/certificates/ejpt-certificate.png',
+  // Paste your official INE credential verification URL here, e.g. 'https://certs.ine.com/...'
+  verificationUrl: '',
   },
   {
     shortName: 'CPTS',

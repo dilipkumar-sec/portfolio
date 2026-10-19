@@ -1,4 +1,5 @@
 import { ArrowUpRight, BadgeCheck, BookOpen } from 'lucide-react'
+import { CertificateViewer } from '@/components/certificate-viewer'
 import { Tag } from '@/components/tag'
 import { cn } from '@/lib/utils'
 import type { Certification } from '@/lib/site-config'
@@ -14,6 +15,14 @@ const statusVariant: Record<Certification['status'], 'accent' | 'outline'> = {
   'in-progress': 'outline',
   certified: 'accent',
 }
+
+const formatDate = (isoDate: string) =>
+  new Date(`${isoDate}T00:00:00Z`).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
 
 export function CertificationCard({ certification }: { certification: Certification }) {
   const isCertified = certification.status === 'certified'
@@ -42,11 +51,29 @@ export function CertificationCard({ certification }: { certification: Certificat
         <span className="text-muted-foreground"> — {certification.title}</span>
       </h3>
 
+      {certification.dateAwarded ? (
+        <p className="mt-2 font-mono text-xs text-muted-foreground">
+          Awarded{' '}
+          <time dateTime={certification.dateAwarded} className="text-foreground">
+            {formatDate(certification.dateAwarded)}
+          </time>
+        </p>
+      ) : null}
+
       {certification.description ? (
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{certification.description}</p>
       ) : (
         <div className="flex-1" />
       )}
+
+      {certification.certificateFile ? (
+        <div className="mt-6">
+          <CertificateViewer
+            file={certification.certificateFile}
+            title={`${certification.shortName} — ${certification.title} certificate`}
+          />
+        </div>
+      ) : null}
 
       {certification.verificationUrl ? (
         <a
