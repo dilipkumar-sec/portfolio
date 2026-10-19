@@ -4,7 +4,7 @@ const focusAreas = [
   { label: 'Approach', value: 'Hands-on labs' },
   { label: 'Focus', value: 'Penetration testing' },
   { label: 'Platforms', value: 'Linux & Windows' },
-  { label: 'Interest', value: 'Web security' },
+  { label: 'Interest', value: 'Network pentesting' },
 ]
 
 export function About() {
