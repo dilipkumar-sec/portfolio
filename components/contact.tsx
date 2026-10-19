@@ -40,7 +40,7 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      index="05"
+      index="06"
       title="Get in Touch"
       description="Open to connecting with others in security, discussing labs, or learning about entry-level opportunities."
     >

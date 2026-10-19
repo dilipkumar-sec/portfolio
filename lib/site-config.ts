@@ -15,6 +15,7 @@ export const siteConfig = {
 export const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'Projects', href: '#projects' },
   { label: 'Journey', href: '#journey' },
   { label: 'Contact', href: '#contact' },
@@ -61,6 +62,34 @@ export const skills: Skill[] = [
     name: 'Python',
     description: 'Building simple security tools and scripts to understand how they work.',
     topics: ['Sockets', 'Requests', 'Parsing', 'Scripting'],
+  },
+]
+
+export type Certification = {
+  shortName: string
+  title: string
+  provider: string
+  status: 'training-completed' | 'in-progress' | 'certified'
+  description?: string
+  // Only add once you have a real credential link.
+  verificationUrl?: string
+}
+
+// Only set status to "certified" after passing the official exam.
+export const certifications: Certification[] = [
+  {
+    shortName: 'eJPT',
+    title: 'Junior Penetration Testing',
+    provider: 'INE Security',
+    status: 'training-completed',
+    description: 'Completed the eJPT training path covering foundational penetration testing concepts.',
+  },
+  {
+    shortName: 'HTB CPTS',
+    title: 'Certified Penetration Testing Specialist',
+    provider: 'Hack The Box',
+    status: 'in-progress',
+    description: 'Currently studying penetration testing methodologies and developing practical security skills.',
   },
 ]
 

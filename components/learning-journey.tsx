@@ -13,7 +13,7 @@ export function LearningJourney() {
   return (
     <Section
       id="journey"
-      index="04"
+      index="05"
       title="Learning Journey"
       description="A running log of milestones and practical labs. Entries are updated as progress is made."
     >

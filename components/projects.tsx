@@ -9,7 +9,7 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      index="03"
+      index="04"
       title="Projects"
       description="A space for the tools, scripts, and write-ups I build while learning."
     >
