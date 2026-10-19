@@ -8,7 +8,7 @@ export function Certifications() {
       id="certifications"
       index="03"
       title="Certifications & Training"
-      description="Structured training paths I have completed or am currently working through."
+      description="Certifications I have earned and training paths I am currently working through."
     >
       <ul className="grid gap-4 md:grid-cols-2">
         {certifications.map((certification) => (

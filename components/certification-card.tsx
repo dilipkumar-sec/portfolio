@@ -1,5 +1,6 @@
-import { ArrowUpRight, Award } from 'lucide-react'
+import { ArrowUpRight, BadgeCheck, BookOpen } from 'lucide-react'
 import { Tag } from '@/components/tag'
+import { cn } from '@/lib/utils'
 import type { Certification } from '@/lib/site-config'
 
 const statusLabel: Record<Certification['status'], string> = {
@@ -15,10 +16,20 @@ const statusVariant: Record<Certification['status'], 'accent' | 'outline'> = {
 }
 
 export function CertificationCard({ certification }: { certification: Certification }) {
+  const isCertified = certification.status === 'certified'
+  const Icon = isCertified ? BadgeCheck : BookOpen
+
   return (
-    <article className="flex h-full flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/40">
+    <article
+      className={cn(
+        'flex h-full flex-col rounded-lg border p-6 transition-colors',
+        isCertified
+          ? 'border-primary/40 bg-primary/5 hover:border-primary/70'
+          : 'border-border bg-card hover:border-primary/40',
+      )}
+    >
       <div className="mb-5 flex items-start justify-between gap-4">
-        <Award className="size-6 text-primary" aria-hidden="true" />
+        <Icon className={cn('size-6', isCertified ? 'text-primary' : 'text-muted-foreground')} aria-hidden="true" />
         <Tag variant={statusVariant[certification.status]}>
           <span className="sr-only">Status: </span>
           {statusLabel[certification.status]}

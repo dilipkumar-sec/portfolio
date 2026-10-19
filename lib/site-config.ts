@@ -79,17 +79,21 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     shortName: 'eJPT',
-    title: 'Junior Penetration Testing',
+    title: 'Junior Penetration Tester',
     provider: 'INE Security',
-    status: 'training-completed',
-    description: 'Completed the eJPT training path covering foundational penetration testing concepts.',
+    status: 'certified',
+    description:
+      'Earned the eJPT certification by demonstrating foundational knowledge of penetration testing and practical security assessment techniques.',
+    // Paste your official INE credential verification URL here, e.g. 'https://certs.ine.com/...'
+    verificationUrl: '',
   },
   {
-    shortName: 'HTB CPTS',
+    shortName: 'CPTS',
     title: 'Certified Penetration Testing Specialist',
     provider: 'Hack The Box',
     status: 'in-progress',
-    description: 'Currently studying penetration testing methodologies and developing practical security skills.',
+    description:
+      'Currently pursuing the HTB Certified Penetration Testing Specialist learning path, developing practical skills in penetration testing, enumeration, exploitation, and privilege escalation.',
   },
 ]
 
