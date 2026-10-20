@@ -28,7 +28,7 @@ const contactLinks: ContactLink[] = [
   },
   {
     label: 'Email',
-    value: 'YOUR_EMAIL_ADDRESS',
+    value: 'dilipkumarbsec@gmail.com',
     href: 'mailto:YOUR_EMAIL_ADDRESS',
     icon: Mail,
     external: false,
