@@ -42,7 +42,7 @@ export function Hero() {
               />
             </a>
             <a
-              href={siteConfig.links.github}
+              href={https://github.com/dilipkumar-sec}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border px-6 text-sm font-medium transition-colors hover:border-primary/50 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2"
