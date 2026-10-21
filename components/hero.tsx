@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
 import { siteConfig } from '@/lib/site-config'
@@ -9,6 +10,7 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,oklch(1_0_0/4%)_1px,transparent_1px),linear-gradient(to_bottom,oklch(1_0_0/4%)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
       />
+
       <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-5xl flex-col justify-center px-6 py-24">
         <div className="animate-in fade-in slide-in-from-bottom-3 duration-700 motion-reduce:animate-none">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground">
@@ -16,14 +18,20 @@ export function Hero() {
             Currently learning offensive security
           </p>
 
-          <h1 id="hero-heading" className="text-6xl font-semibold tracking-tighter sm:text-7xl md:text-8xl">
+          <h1
+            id="hero-heading"
+            className="text-6xl font-semibold tracking-tighter sm:text-7xl md:text-8xl"
+          >
             {siteConfig.name}
             <span className="text-primary">.</span>
           </h1>
 
           <p className="mt-6 text-balance text-xl font-medium text-foreground sm:text-2xl">
-            Cybersecurity Enthusiast <span className="text-muted-foreground" aria-hidden="true">|</span>
-            <span className="sr-only">,</span> Aspiring Penetration Tester
+            Aspiring Penetration Tester
+            <span className="text-muted-foreground" aria-hidden="true">
+              {' | '}
+            </span>
+            <span className="text-primary">eJPT Certified</span>
           </p>
 
           <p className="mt-6 max-w-2xl text-pretty leading-relaxed text-muted-foreground sm:text-lg">
@@ -41,6 +49,7 @@ export function Hero() {
                 aria-hidden="true"
               />
             </a>
+
             <a
               href="https://github.com/dilipkumar-sec"
               target="_blank"
