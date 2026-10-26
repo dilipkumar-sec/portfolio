@@ -5,7 +5,6 @@ import { Orbitron } from 'next/font/google'
 import {
   ArrowRight,
   ShieldCheck,
-  Linkedin,
   Mail,
   Github,
 } from 'lucide-react'
@@ -87,7 +86,10 @@ function TerminalWindow() {
             dilip@kali:~
           </span>
 
-          <ShieldCheck className="size-4 text-white/70" aria-hidden="true" />
+          <ShieldCheck
+            className="size-4 text-white/70"
+            aria-hidden="true"
+          />
         </div>
 
         <div
@@ -192,6 +194,7 @@ export function Hero() {
             <span className="bg-white px-1.5 py-0.5 text-black">
               DILIP
             </span>
+
             <span className="bg-white px-1.5 py-0.5 text-black">
               KUMAR
             </span>
@@ -253,7 +256,9 @@ export function Hero() {
               aria-label="LinkedIn"
               className="flex size-14 items-center justify-center border border-white/10 text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
-              <Linkedin className="size-5" aria-hidden="true" />
+              <span className="text-lg font-bold" aria-hidden="true">
+                in
+              </span>
             </a>
 
             <a
