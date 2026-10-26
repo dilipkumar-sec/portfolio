@@ -1,11 +1,11 @@
-```tsx
 import type { ComponentType, SVGProps } from 'react'
-import { Mail } from 'lucide-react'
+import { ArrowUpRight, Mail } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { Section } from '@/components/section'
 
 type ContactLink = {
   label: string
+  value: string
   href: string
   icon: ComponentType<SVGProps<SVGSVGElement>>
   external: boolean
@@ -25,24 +25,28 @@ const MediumIcon = (props: SVGProps<SVGSVGElement>) => (
 const contactLinks: ContactLink[] = [
   {
     label: 'GitHub',
+    value: 'github.com/dilipkumar-sec',
     href: 'https://github.com/dilipkumar-sec',
     icon: GithubIcon,
     external: true,
   },
   {
     label: 'LinkedIn',
+    value: 'linkedin.com/in/dilipkumar-sec',
     href: 'https://www.linkedin.com/in/dilipkumar-sec',
     icon: LinkedinIcon,
     external: true,
   },
   {
     label: 'Medium',
+    value: 'medium.com/@dilipkumar-sec',
     href: 'https://medium.com/@dilipkumar-sec',
     icon: MediumIcon,
     external: true,
   },
   {
     label: 'Email',
+    value: 'dilipkumarbsec@gmail.com',
     href: 'mailto:dilipkumarbsec@gmail.com',
     icon: Mail,
     external: false,
@@ -57,23 +61,38 @@ export function Contact() {
       title="Get in Touch"
       description="Open to connecting with others in security, discussing labs, or learning about entry-level opportunities."
     >
-      <div className="flex flex-wrap items-center gap-4 pt-2">
-        {contactLinks.map(({ label, href, icon: Icon, external }) => (
-          <a
-            key={label}
-            href={href}
-            {...(external
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : {})}
-            aria-label={label}
-            title={label}
-            className="inline-flex size-11 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
-          >
-            <Icon className="size-5" aria-hidden="true" />
-          </a>
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {contactLinks.map(({ label, value, href, icon: Icon, external }) => (
+          <li key={label}>
+            <a
+              href={href}
+              {...(external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              className="group flex h-full items-start justify-between gap-4 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/40"
+            >
+              <div className="min-w-0">
+                <Icon
+                  className="mb-4 size-5 text-primary"
+                  aria-hidden="true"
+                />
+                <p className="font-medium">{label}</p>
+                <p className="mt-1 truncate font-mono text-xs text-muted-foreground">
+                  {value}
+                </p>
+                {external ? (
+                  <span className="sr-only">(opens in a new tab)</span>
+                ) : null}
+              </div>
+
+              <ArrowUpRight
+                className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }
-```
