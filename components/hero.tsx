@@ -1,16 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowDownRight, ArrowRight, ShieldCheck } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, Github, ShieldCheck } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
 import { siteConfig } from '@/lib/site-config'
 
 const terminalLines = [
   { command: 'whoami', output: 'dilipkumar' },
-  {
-    command: 'cat current_focus.txt',
-    output: 'Penetration Testing | Network Security',
-  },
+  { command: 'cat current_focus.txt', output: 'Penetration Testing | Network Security' },
   { command: 'cat certification.txt', output: 'eJPT Certified' },
   { command: './next-mission.sh', output: 'Learning in progress...' },
 ]
@@ -121,7 +118,7 @@ function TerminalWindow() {
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 font-mono text-[10px] text-white/30 sm:px-7">
+        <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-[10px] font-mono text-white/30 sm:px-7">
           <span>SESSION: ACTIVE</span>
           <span className="flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-primary" />
@@ -158,16 +155,16 @@ export function Hero() {
       />
 
       <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl items-center gap-14 px-6 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10">
-        <div className="min-w-0 animate-in fade-in slide-in-from-bottom-3 duration-700 motion-reduce:animate-none">
-          <div className="mb-8 inline-flex max-w-full items-center gap-3 border border-white/10 bg-white/[0.02] px-4 py-2 font-mono text-[11px] tracking-wide text-muted-foreground sm:text-xs">
-            <span className="relative flex size-2 shrink-0">
+        <div className="animate-in fade-in slide-in-from-bottom-3 duration-700 motion-reduce:animate-none">
+          <div className="mb-8 inline-flex items-center gap-3 border border-white/10 bg-white/[0.02] px-4 py-2 font-mono text-[11px] tracking-wide text-muted-foreground sm:text-xs">
+            <span className="relative flex size-2">
               <span
                 className="absolute inline-flex size-full animate-ping rounded-full bg-primary/50 motion-reduce:animate-none"
                 aria-hidden="true"
               />
               <span className="relative inline-flex size-2 rounded-full bg-primary" />
             </span>
-            <span>AVAILABLE FOR CYBERSECURITY OPPORTUNITIES</span>
+            AVAILABLE FOR CYBERSECURITY OPPORTUNITIES
           </div>
 
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-primary sm:text-sm">
@@ -176,7 +173,7 @@ export function Hero() {
 
           <h1
             id="hero-heading"
-            className="whitespace-nowrap text-[clamp(2.25rem,5.1vw,5.5rem)] font-black uppercase leading-none tracking-[-0.065em] text-foreground"
+            className="max-w-3xl break-words text-6xl font-black uppercase leading-[0.88] tracking-[-0.075em] text-foreground sm:text-7xl md:text-8xl xl:text-[6.8rem]"
           >
             {siteConfig.name}
             <span className="text-primary">.</span>
@@ -231,7 +228,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="min-w-0 animate-in fade-in slide-in-from-bottom-3 duration-1000 motion-reduce:animate-none">
+        <div className="animate-in fade-in slide-in-from-bottom-3 duration-1000 motion-reduce:animate-none">
           <TerminalWindow />
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
