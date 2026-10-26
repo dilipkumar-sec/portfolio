@@ -36,7 +36,7 @@ function TerminalWindow() {
     let characterIndex = 0
     let timeout: ReturnType<typeof setTimeout>
 
-    const typeNext = () => {
+    function typeNext() {
       if (lineIndex >= terminalLines.length) {
         timeout = setTimeout(() => {
           setVisibleLines(0)
@@ -75,22 +75,19 @@ function TerminalWindow() {
         className="absolute -inset-10 rounded-full bg-white/[0.035] blur-3xl"
       />
 
-      <div className="relative overflow-hidden rounded-xl border border-white/[0.12] bg-[#080808]/95 shadow-2xl shadow-black/60">
-        <div className="flex items-center justify-between border-b border-white/[0.08] bg-white/[0.045] px-5 py-4">
+      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#080808] shadow-2xl shadow-black/60">
+        <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-5 py-4">
           <div className="flex items-center gap-2" aria-hidden="true">
             <span className="size-3 rounded-full bg-[#ff5f57]" />
             <span className="size-3 rounded-full bg-[#febc2e]" />
             <span className="size-3 rounded-full bg-[#28c840]" />
           </div>
 
-          <span className="font-mono text-[11px] text-white/35">
+          <span className="font-mono text-[11px] text-white/40">
             dilip@kali:~
           </span>
 
-          <ShieldCheck
-            className="size-4 text-white/65"
-            aria-hidden="true"
-          />
+          <ShieldCheck className="size-4 text-white/70" aria-hidden="true" />
         </div>
 
         <div
@@ -136,18 +133,27 @@ function TerminalWindow() {
             </p>
           )}
         </div>
+
+        <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 font-mono text-[10px] text-white/40 sm:px-7">
+          <span>SESSION: ACTIVE</span>
+
+          <span className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-white" />
+            LEARNING MODE
+          </span>
+        </div>
       </div>
 
       <div
         aria-hidden="true"
-        className="absolute -left-5 top-1/2 hidden -translate-y-1/2 items-center justify-center border border-white/[0.12] bg-[#111111] p-4 text-white/80 shadow-xl sm:flex"
+        className="absolute -left-5 top-1/2 hidden -translate-y-1/2 items-center justify-center border border-white/10 bg-[#111111] p-4 text-white/80 shadow-xl sm:flex"
       >
         <ArrowRight className="size-5" />
       </div>
 
       <div
         aria-hidden="true"
-        className="absolute -right-4 bottom-12 hidden rotate-6 items-center justify-center border border-white/[0.12] bg-[#111111] p-4 text-white/80 shadow-xl sm:flex"
+        className="absolute -right-4 bottom-12 hidden rotate-6 items-center justify-center border border-white/10 bg-[#111111] p-4 text-white/80 shadow-xl sm:flex"
       >
         <ShieldCheck className="size-5" />
       </div>
@@ -174,7 +180,7 @@ export function Hero() {
 
       <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-[1400px] items-center gap-14 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-12">
         <div className="min-w-0 animate-in fade-in slide-in-from-bottom-3 duration-700 motion-reduce:animate-none">
-          <div className="mb-8 inline-flex max-w-full items-center gap-3 border border-white/[0.12] bg-white/[0.025] px-4 py-2 font-mono text-[10px] tracking-wide text-white/60 sm:text-xs">
+          <div className="mb-8 inline-flex max-w-full items-center gap-3 border border-white/10 bg-white/[0.025] px-4 py-2 font-mono text-[10px] tracking-wide text-white/60 sm:text-xs">
             <span className="size-2 shrink-0 rounded-full bg-white" />
             <span>AVAILABLE FOR CYBERSECURITY OPPORTUNITIES</span>
           </div>
@@ -202,7 +208,10 @@ export function Hero() {
               <span className="font-semibold text-white">
                 Penetration Tester
               </span>
-              <span className="ml-1 inline-block h-4 w-[2px] animate-pulse bg-white align-middle motion-reduce:animate-none" />
+              <span
+                className="ml-1 inline-block h-4 w-[2px] animate-pulse bg-white align-middle motion-reduce:animate-none"
+                aria-hidden="true"
+              />
             </p>
           </div>
 
@@ -242,7 +251,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex size-14 items-center justify-center border border-white/[0.12] text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
+              className="flex size-14 items-center justify-center border border-white/10 text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               <Linkedin className="size-5" aria-hidden="true" />
             </a>
@@ -252,7 +261,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex size-14 items-center justify-center border border-white/[0.12] text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
+              className="flex size-14 items-center justify-center border border-white/10 text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               <Github className="size-5" aria-hidden="true" />
             </a>
@@ -262,7 +271,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medium"
-              className="flex size-14 items-center justify-center border border-white/[0.12] font-serif text-xl font-bold text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
+              className="flex size-14 items-center justify-center border border-white/10 font-serif text-xl font-bold text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               M
             </a>
@@ -270,7 +279,7 @@ export function Hero() {
             <a
               href="mailto:dilipkumarbsec@gmail.com"
               aria-label="Email"
-              className="flex size-14 items-center justify-center border border-white/[0.12] text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
+              className="flex size-14 items-center justify-center border border-white/10 text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               <Mail className="size-5" aria-hidden="true" />
             </a>
@@ -280,7 +289,7 @@ export function Hero() {
         <div className="min-w-0 animate-in fade-in slide-in-from-bottom-3 duration-1000 motion-reduce:animate-none">
           <TerminalWindow />
 
-          <div className="mt-8 border-t border-white/[0.12] pt-5">
+          <div className="mt-8 border-t border-white/10 pt-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
               Current Focus
             </p>
