@@ -1,9 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { Orbitron } from 'next/font/google'
 import { ArrowDownRight, ArrowRight, ShieldCheck } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
 import { siteConfig } from '@/lib/site-config'
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+})
 
 const terminalLines = [
   { command: 'whoami', output: 'dilipkumar' },
@@ -179,14 +186,14 @@ export function Hero() {
             <span>AVAILABLE FOR CYBERSECURITY OPPORTUNITIES</span>
           </div>
 
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-primary sm:text-sm sm:tracking-[0.3em]">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-primary sm:text-sm sm:tracking-[0.3em]">
             Offensive Security / Portfolio
           </p>
 
-          {/* Updated heading: slightly smaller font and less compressed letters */}
+          {/* Futuristic Orbitron heading */}
           <h1
             id="hero-heading"
-            className="text-[clamp(2.25rem,4.5vw,4.8rem)] font-black uppercase leading-[0.95] tracking-[-0.045em] text-foreground"
+            className={`${orbitron.className} text-[clamp(2rem,4.1vw,4.25rem)] font-black uppercase leading-[1.08] tracking-[-0.055em] text-foreground`}
           >
             <span className="whitespace-nowrap">
               {siteConfig.name}
