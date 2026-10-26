@@ -190,10 +190,9 @@ export function Hero() {
             Offensive Security / Portfolio
           </p>
 
-          {/* Futuristic Orbitron heading */}
           <h1
             id="hero-heading"
-            className={`${orbitron.className} text-[clamp(2rem,4.1vw,4.25rem)] font-black uppercase leading-[1.08] tracking-[-0.055em] text-foreground`}
+            className={`${orbitron.className} text-[clamp(2rem,4.1vw,4.25rem)] font-black uppercase leading-[1.08] tracking-[-0.02em] text-foreground`}
           >
             <span className="whitespace-nowrap">
               {siteConfig.name}
