@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Orbitron } from 'next/font/google'
-import {
-  ArrowRight,
-  ShieldCheck,
-  Mail,
-} from 'lucide-react'
+import { ArrowRight, ShieldCheck, Mail } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 
 const orbitron = Orbitron({
@@ -93,7 +89,7 @@ function TerminalWindow() {
           />
         </div>
 
-        {/* Animated terminal content */}
+        {/* Animated terminal */}
         <div
           className="min-h-[285px] space-y-5 p-5 font-mono text-xs leading-relaxed sm:min-h-[320px] sm:p-7 sm:text-sm"
           aria-label="Animated cybersecurity terminal"
@@ -194,18 +190,13 @@ export function Hero() {
             <span>AVAILABLE FOR CYBERSECURITY OPPORTUNITIES</span>
           </div>
 
-          {/* Name */}
+          {/* Name: white text without white background blocks */}
           <h1
             id="hero-heading"
             className={`${orbitron.className} mb-8 flex flex-col items-start text-[clamp(3.1rem,7.2vw,6.8rem)] font-black uppercase leading-[0.98] tracking-[-0.045em]`}
           >
-            <span className="bg-white px-1.5 py-0.5 text-black">
-              DILIP
-            </span>
-
-            <span className="bg-white px-1.5 py-0.5 text-black">
-              KUMAR
-            </span>
+            <span className="text-white">DILIP</span>
+            <span className="text-white">KUMAR</span>
           </h1>
 
           {/* Professional title */}
@@ -274,7 +265,7 @@ export function Hero() {
               </span>
             </a>
 
-            {/* GitHub - inline SVG, no lucide-react dependency */}
+            {/* GitHub */}
             <a
               href="https://github.com/dilipkumar-sec"
               target="_blank"
@@ -292,12 +283,12 @@ export function Hero() {
               </svg>
             </a>
 
-            {/* Medium */}
+            {/* Medium profile */}
             <a
-              href="https://medium.com"
+              href="https://medium.com/@dilipkumar-sec"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Medium"
+              aria-label="Medium profile"
               className="flex size-14 items-center justify-center border border-white/10 font-serif text-xl font-bold text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               M
@@ -306,7 +297,7 @@ export function Hero() {
             {/* Email */}
             <a
               href="mailto:dilipkumarbsec@gmail.com"
-              aria-label="Email"
+              aria-label="Email dilipkumarbsec@gmail.com"
               className="flex size-14 items-center justify-center border border-white/10 text-white/60 transition-all duration-300 hover:border-white hover:bg-white hover:text-black motion-reduce:transition-none"
             >
               <Mail className="size-5" aria-hidden="true" />
