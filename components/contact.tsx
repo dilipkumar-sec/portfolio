@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from 'react'
-import { ArrowUpRight, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { Section } from '@/components/section'
 
@@ -24,17 +24,17 @@ const MediumIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const contactLinks: ContactLink[] = [
   {
-    label: 'GitHub',
-    value: 'github.com/dilipkumar-sec',
-    href: 'https://github.com/dilipkumar-sec',
-    icon: GithubIcon,
-    external: true,
-  },
-  {
     label: 'LinkedIn',
     value: 'linkedin.com/in/dilipkumar-sec',
     href: 'https://www.linkedin.com/in/dilipkumar-sec',
     icon: LinkedinIcon,
+    external: true,
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/dilipkumar-sec',
+    href: 'https://github.com/dilipkumar-sec',
+    icon: GithubIcon,
     external: true,
   },
   {
@@ -61,34 +61,25 @@ export function Contact() {
       title="Get in Touch"
       description="Open to connecting with others in security, discussing labs, or learning about entry-level opportunities."
     >
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {contactLinks.map(({ label, value, href, icon: Icon, external }) => (
+      <ul className="flex flex-wrap items-center justify-center gap-3">
+        {contactLinks.map(({ label, href, icon: Icon, external }) => (
           <li key={label}>
             <a
               href={href}
               {...(external
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
-              className="group flex h-full items-start justify-between gap-4 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/40"
+              aria-label={label}
+              title={label}
+              className="group flex size-12 items-center justify-center rounded-sm border border-border bg-transparent text-muted-foreground transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <div className="min-w-0">
-                <Icon
-                  className="mb-4 size-5 text-primary"
-                  aria-hidden="true"
-                />
-                <p className="font-medium">{label}</p>
-                <p className="mt-1 truncate font-mono text-xs text-muted-foreground">
-                  {value}
-                </p>
-                {external ? (
-                  <span className="sr-only">(opens in a new tab)</span>
-                ) : null}
-              </div>
-
-              <ArrowUpRight
-                className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+              <Icon
+                className="size-5 transition-transform duration-300 group-hover:scale-110"
                 aria-hidden="true"
               />
+              {external ? (
+                <span className="sr-only">(opens in a new tab)</span>
+              ) : null}
             </a>
           </li>
         ))}
