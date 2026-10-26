@@ -183,9 +183,10 @@ export function Hero() {
             Offensive Security / Portfolio
           </p>
 
+          {/* Updated heading: slightly smaller font and less compressed letters */}
           <h1
             id="hero-heading"
-            className="text-[clamp(2.25rem,5.1vw,5.5rem)] font-black uppercase leading-[0.95] tracking-[-0.065em] text-foreground"
+            className="text-[clamp(2.25rem,4.5vw,4.8rem)] font-black uppercase leading-[0.95] tracking-[-0.045em] text-foreground"
           >
             <span className="whitespace-nowrap">
               {siteConfig.name}
