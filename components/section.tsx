@@ -14,7 +14,7 @@ export function Section({ id, index, title, description, children, className }: 
   const headingId = `${id}-heading`
   return (
     <section id={id} aria-labelledby={headingId} className={cn('border-t border-border py-20 md:py-28', className)}>
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <header className="mb-12 max-w-2xl">
           <p className="mb-3 font-mono text-sm text-primary">
             <span aria-hidden="true">{index}. </span>
