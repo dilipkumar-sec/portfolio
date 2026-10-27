@@ -190,12 +190,14 @@ export function Hero() {
             <span>AVAILABLE FOR CYBERSECURITY OPPORTUNITIES</span>
           </div>
 
-          {/* Name: white text without white background blocks */}
+          {/* Name with adjusted L-I spacing */}
           <h1
             id="hero-heading"
             className={`${orbitron.className} mb-8 flex flex-col items-start text-[clamp(3.1rem,7.2vw,6.8rem)] font-black uppercase leading-[0.98] tracking-[-0.045em]`}
           >
-            <span className="text-white">DILIP</span>
+            <span className="text-white">
+              DIL<span className="ml-[0.055em]">I</span>P
+            </span>
             <span className="text-white">KUMAR</span>
           </h1>
 
